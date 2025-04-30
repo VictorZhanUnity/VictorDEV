@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   method: 2
   authorization:
-    authorizationType: 1
+    authorizationType: 0
     token: 
   responseDataType: 0
   ipConfig: {fileID: 11400000, guid: 6559957fec8e8f44481d71f6e97a2b78, type: 2}
@@ -23,8 +23,82 @@ MonoBehaviour:
     isActivated: 0
     fieldList: []
   body:
-    isActivated: 0
-    _bodyType: 0
+    isActivated: 1
+    _bodyType: 2
     fieldList: []
-    _rawJSON: "{\r\n  \"batchString\": \"string\",\r\n  \"index\": 0,\r\n  \"isFinalBatch\":
-      true\r\n}"
+    _rawJSON: "{\r\n  \"batchString\": \"{\\r\\n  \\\"Room-A1\\\": [\\r\\n    {\\r\\n     
+      \\\"code\\\": \\\"Rack101\\\",\\r\\n      \\\"type\\\": \\\"ATEN-PCEIII-4211060-19\u7A7A\u6A5F\u6AC3\\\",\\r\\n     
+      \\\"capacityUsage\\\": {\\r\\n        \\\"watt\\\": 4800,\\r\\n        \\\"weightCapacity\\\":
+      320,\\r\\n        \\\"usedU\\\": 34,\\r\\n        \\\"percentOfWT\\\": 32,\\r\\n       
+      \\\"percentOfWC\\\": 16,\\r\\n        \\\"percentOfRU\\\": 81,\\r\\n       
+      \\\"radio\\\": \\\"34/42\\\"\\r\\n      },\\r\\n      \\\"contains\\\": []\\r\\n   
+      }\\r\\n  ],\\r\\n  \\\"Room-A2\\\": [\\r\\n    {\\r\\n      \\\"code\\\": \\\"Rack101\\\",\\r\\n     
+      \\\"type\\\": \\\"ATEN-PCEIII-4211060-19\u7A7A\u6A5F\u6AC3\\\",\\r\\n     
+      \\\"capacityUsage\\\": {\\r\\n        \\\"watt\\\": 4800,\\r\\n        \\\"weightCapacity\\\":
+      320,\\r\\n        \\\"usedU\\\": 34,\\r\\n        \\\"percentOfWT\\\": 32,\\r\\n       
+      \\\"percentOfWC\\\": 16,\\r\\n        \\\"percentOfRU\\\": 81,\\r\\n       
+      \\\"radio\\\": \\\"34/42\\\"\\r\\n      },\\r\\n      \\\"contains\\\": [\\r\\n       
+      {\\r\\n          \\\"RU\\\": 42,\\r\\n          \\\"info\\\": \\\"Brocade-CER2024C-4X-Router-1U\\\"\\r\\n       
+      },\\r\\n        {\\r\\n          \\\"RU\\\": 41,\\r\\n          \\\"info\\\":
+      \\\"Brocade-CER2024C-4X-Router-1U\\\"\\r\\n        },\\r\\n        {\\r\\n         
+      \\\"RU\\\": 40,\\r\\n          \\\"info\\\": \\\"empty\\\"\\r\\n        },\\r\\n       
+      {\\r\\n          \\\"RU\\\": 39,\\r\\n          \\\"info\\\": \\\"Brocade-CER2024C-4X-Router-1U\\\"\\r\\n       
+      },\\r\\n        {\\r\\n          \\\"RU\\\": 38,\\r\\n          \\\"info\\\":
+      \\\"Brocade-CER2024C-4X-Router-1U\\\"\\r\\n        },\\r\\n        {\\r\\n         
+      \\\"RU\\\": 38,\\r\\n          \\\"info\\\": \\\"Brocade-CER2024C-4X-Router-1U\\\"\\r\\n       
+      },\\r\\n        {\\r\\n          \\\"RU\\\": 37,\\r\\n          \\\"info\\\":
+      \\\"Brocade-CER2024C-4X-Router-1U\\\"\\r\\n        },\\r\\n        {\\r\\n         
+      \\\"RU\\\": 36,\\r\\n          \\\"info\\\": \\\"Brocade-CER2024C-4X-Router-1U\\\"\\r\\n       
+      },\\r\\n        {\\r\\n          \\\"RU\\\": 35,\\r\\n          \\\"info\\\":
+      \\\"Dell-PowerSwitchS\u7CFB\u5217-10GbE-Switch-6U\\\"\\r\\n        },\\r\\n       
+      {\\r\\n          \\\"RU\\\": 34,\\r\\n          \\\"info\\\": \\\"Dell-PowerSwitchS\u7CFB\u5217-10GbE-Switch-6U\\\"\\r\\n       
+      },\\r\\n        {\\r\\n          \\\"RU\\\": 33,\\r\\n          \\\"info\\\":
+      \\\"Dell-PowerSwitchS\u7CFB\u5217-10GbE-Switch-6U\\\"\\r\\n        },\\r\\n       
+      {\\r\\n          \\\"RU\\\": 32,\\r\\n          \\\"info\\\": \\\"Dell-PowerSwitchS\u7CFB\u5217-10GbE-Switch-6U\\\"\\r\\n       
+      },\\r\\n        {\\r\\n          \\\"RU\\\": 31,\\r\\n          \\\"info\\\":
+      \\\"Dell-PowerSwitchS\u7CFB\u5217-10GbE-Switch-6U\\\"\\r\\n        },\\r\\n       
+      {\\r\\n          \\\"RU\\\": 30,\\r\\n          \\\"info\\\": \\\"Dell-PowerSwitchS\u7CFB\u5217-10GbE-Switch-6U\\\"\\r\\n       
+      },\\r\\n        {\\r\\n          \\\"RU\\\": 29,\\r\\n          \\\"info\\\":
+      \\\"Dell-PowerSwitchS\u7CFB\u5217-10GbE-Switch-6U\\\"\\r\\n        },\\r\\n       
+      {\\r\\n          \\\"RU\\\": 28,\\r\\n          \\\"info\\\": \\\"Dell-PowerSwitchS\u7CFB\u5217-10GbE-Switch-6U\\\"\\r\\n       
+      },\\r\\n        {\\r\\n          \\\"RU\\\": 27,\\r\\n          \\\"info\\\":
+      \\\"Dell-PowerSwitchS\u7CFB\u5217-10GbE-Switch-6U\\\"\\r\\n        },\\r\\n       
+      {\\r\\n          \\\"RU\\\": 26,\\r\\n          \\\"info\\\": \\\"Dell-PowerSwitchS\u7CFB\u5217-10GbE-Switch-6U\\\"\\r\\n       
+      },\\r\\n        {\\r\\n          \\\"RU\\\": 25,\\r\\n          \\\"info\\\":
+      \\\"Dell-PowerSwitchS\u7CFB\u5217-10GbE-Switch-6U\\\"\\r\\n        },\\r\\n       
+      {\\r\\n          \\\"RU\\\": 24,\\r\\n          \\\"info\\\": \\\"Dell-PowerSwitchS\u7CFB\u5217-10GbE-Switch-6U\\\"\\r\\n       
+      },\\r\\n        {\\r\\n          \\\"RU\\\": 23,\\r\\n          \\\"info\\\":
+      \\\"empty\\\"\\r\\n        },\\r\\n        {\\r\\n          \\\"RU\\\": 22,\\r\\n         
+      \\\"info\\\": \\\"Dell-PowerSwitchZ\u7CFB\u5217-Switch-2U\\\"\\r\\n       
+      },\\r\\n        {\\r\\n          \\\"RU\\\": 21,\\r\\n          \\\"info\\\":
+      \\\"Dell-PowerSwitchZ\u7CFB\u5217-Switch-2U\\\"\\r\\n        },\\r\\n       
+      {\\r\\n          \\\"RU\\\": 20,\\r\\n          \\\"info\\\": \\\"Dell-PowerSwitchZ\u7CFB\u5217-Switch-2U\\\"\\r\\n       
+      },\\r\\n        {\\r\\n          \\\"RU\\\": 19,\\r\\n          \\\"info\\\":
+      \\\"Dell-PowerSwitchZ\u7CFB\u5217-Switch-2U\\\"\\r\\n        },\\r\\n       
+      {\\r\\n          \\\"RU\\\": 18,\\r\\n          \\\"info\\\": \\\"Dell-PowerSwitchZ\u7CFB\u5217-Switch-2U\\\"\\r\\n       
+      },\\r\\n        {\\r\\n          \\\"RU\\\": 17,\\r\\n          \\\"info\\\":
+      \\\"Dell-PowerSwitchZ\u7CFB\u5217-Switch-2U\\\"\\r\\n        },\\r\\n       
+      {\\r\\n          \\\"RU\\\": 16,\\r\\n          \\\"info\\\": \\\"empty\\\"\\r\\n       
+      },\\r\\n        {\\r\\n          \\\"RU\\\": 15,\\r\\n          \\\"info\\\":
+      \\\"empty\\\"\\r\\n        },\\r\\n        {\\r\\n          \\\"RU\\\": 14,\\r\\n         
+      \\\"info\\\": \\\"empty\\\"\\r\\n        },\\r\\n        {\\r\\n          \\\"RU\\\":
+      13,\\r\\n          \\\"info\\\": \\\"empty\\\"\\r\\n        },\\r\\n       
+      {\\r\\n          \\\"RU\\\": 12,\\r\\n          \\\"info\\\": \\\"Dell-PowerEdge\u7CFB\u5217-MX9116n-Server-2U\\\"\\r\\n       
+      },\\r\\n        {\\r\\n          \\\"RU\\\": 11,\\r\\n          \\\"info\\\":
+      \\\"Dell-PowerEdge\u7CFB\u5217-MX9116n-Server-2U\\\"\\r\\n        },\\r\\n       
+      {\\r\\n          \\\"RU\\\": 10,\\r\\n          \\\"info\\\": \\\"Dell-PowerEdge\u7CFB\u5217-MX9116n-Server-2U\\\"\\r\\n       
+      },\\r\\n        {\\r\\n          \\\"RU\\\": 9,\\r\\n          \\\"info\\\":
+      \\\"Dell-PowerEdge\u7CFB\u5217-MX9116n-Server-2U\\\"\\r\\n        },\\r\\n       
+      {\\r\\n          \\\"RU\\\": 8,\\r\\n          \\\"info\\\": \\\"Dell-PowerEdge\u7CFB\u5217-MX9116n-Server-2U\\\"\\r\\n       
+      },\\r\\n        {\\r\\n          \\\"RU\\\": 7,\\r\\n          \\\"info\\\":
+      \\\"Dell-PowerEdge\u7CFB\u5217-MX9116n-Server-2U\\\"\\r\\n        },\\r\\n       
+      {\\r\\n          \\\"RU\\\": 6,\\r\\n          \\\"info\\\": \\\"Dell-PowerEdge\u7CFB\u5217-MX9116n-Server-2U\\\"\\r\\n       
+      },\\r\\n        {\\r\\n          \\\"RU\\\": 5,\\r\\n          \\\"info\\\":
+      \\\"Dell-PowerEdge\u7CFB\u5217-MX9116n-Server-2U\\\"\\r\\n        },\\r\\n       
+      {\\r\\n          \\\"RU\\\": 4,\\r\\n          \\\"info\\\": \\\"Dell-PowerEdge\u7CFB\u5217-MX9116n-Server-2U\\\"\\r\\n       
+      },\\r\\n        {\\r\\n          \\\"RU\\\": 3,\\r\\n          \\\"info\\\":
+      \\\"Dell-PowerEdge\u7CFB\u5217-MX9116n-Server-2U\\\"\\r\\n        },\\r\\n       
+      {\\r\\n          \\\"RU\\\": 2,\\r\\n          \\\"info\\\": \\\"empty\\\"\\r\\n       
+      },\\r\\n        {\\r\\n          \\\"RU\\\": 1,\\r\\n          \\\"info\\\":
+      \\\"empty\\\"\\r\\n        }\\r\\n      ]\\r\\n    }\\r\\n  ]\\r\\n}\",\r\n 
+      \"index\": 0,\r\n  \"isFinalBatch\": true\r\n}"
