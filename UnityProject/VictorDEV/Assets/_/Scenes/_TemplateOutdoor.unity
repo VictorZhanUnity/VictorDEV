@@ -119,6 +119,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &60796313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 60796315}
+  - component: {fileID: 60796314}
+  m_Layer: 0
+  m_Name: '[Singleton] - WebApiExcelGenerator'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &60796314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60796313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 577910ce085d3ee45964da651fda5356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonChunkSize: 500000
+  requestExcelExportPrepare: {fileID: 11400000, guid: 59b1c31679525f043880097bbd1452d2, type: 2}
+  requestExcelExportStart: {fileID: 11400000, guid: 5e9e2dc024b7f9949a5d22592c56d334, type: 2}
+  requestExcelExport: {fileID: 11400000, guid: cfab52a645091b24999c9b69ac3b1be0, type: 2}
+--- !u!4 &60796315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60796313}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &157207112
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,6 +843,7 @@ Transform:
   - {fileID: 432432461}
   - {fileID: 1610324853}
   - {fileID: 1598106117}
+  - {fileID: 1438371806}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &432432459
@@ -1075,6 +1124,37 @@ Transform:
   - {fileID: 8356767531144422436}
   - {fileID: 371064362718026014}
   m_Father: {fileID: 1576199004}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1438371805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1438371806}
+  m_Layer: 0
+  m_Name: LookAt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1438371806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438371805}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.29, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 409132453}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1576199003
 GameObject:
@@ -1684,6 +1764,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1610324853}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1729935111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1729935113}
+  - component: {fileID: 1729935112}
+  m_Layer: 0
+  m_Name: '[Singleton] - CoroutineHandler'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1729935112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729935111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d0cefeac330174cb94185eae5dab17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1729935113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729935111}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1823688464
 GameObject:
   m_ObjectHideFlags: 0
@@ -1693,6 +1817,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1823688467}
+  - component: {fileID: 1823688469}
   - component: {fileID: 1823688466}
   - component: {fileID: 1823688465}
   - component: {fileID: 1823688468}
@@ -1770,8 +1895,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823688464}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: -4}
+  m_LocalRotation: {x: -0.44058684, y: 0.25151697, z: -0.13009132, w: -0.85187954}
+  m_LocalPosition: {x: 2.3871512, y: 7.4962144, z: -3.690302}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1916,6 +2041,37 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
+--- !u!114 &1823688469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823688464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e84521ca078b94b907c18100735bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1438371806}
+  boundsCollider: {fileID: 0}
+  distance: 10
+  distanceLimits: {x: 1, y: 50}
+  zoomSpeed: 0.5
+  zoomSpeedMultiplier: 7
+  zoomDampTime: 0.2
+  enableZoom: 1
+  xSpeed: 7
+  ySpeed: 7
+  yMinLimit: -10
+  yMaxLimit: 90
+  rotationDampTime: 0.2
+  enableRotation: 1
+  moveSpeed: 3
+  moveDampTime: 0.2
+  edgeSizePercent: 0.02
+  enableEdgeMovement: 0
+  moveSpeedMultiplier: 0.15
 --- !u!1 &1898772527
 GameObject:
   m_ObjectHideFlags: 1
@@ -1946,7 +2102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: dcf18c16cf194994390ee2490ffffc2b, type: 2}
-  m_StaticLightingSkyUniqueID: 4
+  m_StaticLightingSkyUniqueID: 0
   m_StaticLightingCloudsUniqueID: 0
   m_StaticLightingVolumetricClouds: 0
   bounces: 1
@@ -1957,6 +2113,114 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898772527}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2142569350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2142569352}
+  - component: {fileID: 2142569351}
+  m_Layer: 0
+  m_Name: Demo_DeviceAssetToExcel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2142569351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142569350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2e1cf57919d56c40b111df9fe8a4019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonChunk:
+  - "{\r\n  \"Room-A1\": [\r\n    {\r\n      \"code\": \"Rack101\",\r\n      \"type\":
+    \"ATEN-PCEIII-4211060-19\u7A7A\u6A5F\u6AC3\",\r\n      \"capacityUsage\": {\r\n       
+    \"watt\": 4800,\r\n        \"weightCapacity\": 320,\r\n        \"usedU\": 34,\r\n       
+    \"percentOfWT\": 32,\r\n        \"percentOfWC\": 16,\r\n        \"percentOfRU\":
+    81,\r\n        \"radio\": \"34/42\"\r\n      },\r\n      \"contains\": []\r\n   
+    }\r\n  ],\r\n  \"Room-A2\": [\r\n    {\r\n      \"code\": \"Rack101\",\r\n     
+    \"type\": \"ATEN-PCEIII-4211060-19\u7A7A\u6A5F\u6AC3\",\r\n      \"capacityUsage\":
+    {\r\n        \"watt\": 4800,\r\n    "
+  - "    \"weightCapacity\": 320,\r\n        \"usedU\": 34,\r\n        \"percentOfWT\":
+    32,\r\n        \"percentOfWC\": 16,\r\n        \"percentOfRU\": 81,\r\n       
+    \"radio\": \"34/42\"\r\n      },\r\n      \"contains\": [\r\n        {\r\n         
+    \"RU\": 42,\r\n          \"info\": \"Brocade-CER2024C-4X-Router-1U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 41,\r\n          \"info\": \"Brocade-CER2024C-4X-Router-1U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 40,\r\n          \"info\": \"empty\"\r\n       
+    },\r\n        {\r\n          \"RU\": 39,\r\n          \"info\""
+  - ": \"Brocade-CER2024C-4X-Router-1U\"\r\n        },\r\n        {\r\n         
+    \"RU\": 38,\r\n          \"info\": \"Brocade-CER2024C-4X-Router-1U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 38,\r\n          \"info\": \"Brocade-CER2024C-4X-Router-1U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 37,\r\n          \"info\": \"Brocade-CER2024C-4X-Router-1U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 36,\r\n          \"info\": \"Brocade-CER2024C-4X-Router-1U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 35,\r\n          \"info\": \"Dell-PowerSwitchS\u7CFB\u5217-10"
+  - "GbE-Switch-6U\"\r\n        },\r\n        {\r\n          \"RU\": 34,\r\n         
+    \"info\": \"Dell-PowerSwitchS\u7CFB\u5217-10GbE-Switch-6U\"\r\n        },\r\n       
+    {\r\n          \"RU\": 33,\r\n          \"info\": \"Dell-PowerSwitchS\u7CFB\u5217-10GbE-Switch-6U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 32,\r\n          \"info\": \"Dell-PowerSwitchS\u7CFB\u5217-10GbE-Switch-6U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 31,\r\n          \"info\": \"Dell-PowerSwitchS\u7CFB\u5217-10GbE-Switch-6U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 30,\r\n          \"info\": \"Dell-PowerSwitchS"
+  - "\u7CFB\u5217-10GbE-Switch-6U\"\r\n        },\r\n        {\r\n          \"RU\":
+    29,\r\n          \"info\": \"Dell-PowerSwitchS\u7CFB\u5217-10GbE-Switch-6U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 28,\r\n          \"info\": \"Dell-PowerSwitchS\u7CFB\u5217-10GbE-Switch-6U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 27,\r\n          \"info\": \"Dell-PowerSwitchS\u7CFB\u5217-10GbE-Switch-6U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 26,\r\n          \"info\": \"Dell-PowerSwitchS\u7CFB\u5217-10GbE-Switch-6U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 25,\r\n          \"info\": \"Dell-PowerSw"
+  - "itchS\u7CFB\u5217-10GbE-Switch-6U\"\r\n        },\r\n        {\r\n         
+    \"RU\": 24,\r\n          \"info\": \"Dell-PowerSwitchS\u7CFB\u5217-10GbE-Switch-6U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 23,\r\n          \"info\": \"empty\"\r\n       
+    },\r\n        {\r\n          \"RU\": 22,\r\n          \"info\": \"Dell-PowerSwitchZ\u7CFB\u5217-Switch-2U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 21,\r\n          \"info\": \"Dell-PowerSwitchZ\u7CFB\u5217-Switch-2U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 20,\r\n          \"info\": \"Dell-PowerSwitchZ\u7CFB\u5217-Switch-2U\"\r\n       
+    },\r\n     "
+  - "   {\r\n          \"RU\": 19,\r\n          \"info\": \"Dell-PowerSwitchZ\u7CFB\u5217-Switch-2U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 18,\r\n          \"info\": \"Dell-PowerSwitchZ\u7CFB\u5217-Switch-2U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 17,\r\n          \"info\": \"Dell-PowerSwitchZ\u7CFB\u5217-Switch-2U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 16,\r\n          \"info\": \"empty\"\r\n       
+    },\r\n        {\r\n          \"RU\": 15,\r\n          \"info\": \"empty\"\r\n       
+    },\r\n        {\r\n          \"RU\": 14,\r\n          \"info\": \"empty\"\r\n       
+    },\r\n       "
+  - " {\r\n          \"RU\": 13,\r\n          \"info\": \"empty\"\r\n        },\r\n       
+    {\r\n          \"RU\": 12,\r\n          \"info\": \"Dell-PowerEdge\u7CFB\u5217-MX9116n-Server-2U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 11,\r\n          \"info\": \"Dell-PowerEdge\u7CFB\u5217-MX9116n-Server-2U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 10,\r\n          \"info\": \"Dell-PowerEdge\u7CFB\u5217-MX9116n-Server-2U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 9,\r\n          \"info\": \"Dell-PowerEdge\u7CFB\u5217-MX9116n-Server-2U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 8,\r\n      "
+  - "    \"info\": \"Dell-PowerEdge\u7CFB\u5217-MX9116n-Server-2U\"\r\n        },\r\n       
+    {\r\n          \"RU\": 7,\r\n          \"info\": \"Dell-PowerEdge\u7CFB\u5217-MX9116n-Server-2U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 6,\r\n          \"info\": \"Dell-PowerEdge\u7CFB\u5217-MX9116n-Server-2U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 5,\r\n          \"info\": \"Dell-PowerEdge\u7CFB\u5217-MX9116n-Server-2U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 4,\r\n          \"info\": \"Dell-PowerEdge\u7CFB\u5217-MX9116n-Server-2U\"\r\n       
+    },\r\n        {\r\n          \"RU\": 3,\r\n          \""
+  - "info\": \"Dell-PowerEdge\u7CFB\u5217-MX9116n-Server-2U\"\r\n        },\r\n       
+    {\r\n          \"RU\": 2,\r\n          \"info\": \"empty\"\r\n        },\r\n       
+    {\r\n          \"RU\": 1,\r\n          \"info\": \"empty\"\r\n        }\r\n     
+    ]\r\n    }\r\n  ]\r\n}"
+--- !u!4 &2142569352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142569350}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -3712,3 +3976,6 @@ SceneRoots:
   - {fileID: 1576199004}
   - {fileID: 1122945147}
   - {fileID: 261322071}
+  - {fileID: 2142569352}
+  - {fileID: 60796315}
+  - {fileID: 1729935113}
