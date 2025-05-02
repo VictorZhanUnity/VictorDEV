@@ -23,7 +23,7 @@ namespace _VictorDEV.Common
         [ContextMenu("- GetAllLandmarks")]
         private void GetAllLandmarks()
         {
-            landmarkList = FindObjectsOfType<PositionTo2DPoint>().ToList();
+            landmarkList = FindObjectsByType<PositionTo2DPoint>(FindObjectsSortMode.None).ToList();
         }
     }
 }

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using Newtonsoft.Json;
 using UnityEngine;
+using VictorDev.Net.WebAPI.TCIT;
 using Debug = VictorDev.Common.Debug;
 
 public class Demo_DeviceAssetToExcel : MonoBehaviour
@@ -9,8 +10,7 @@ public class Demo_DeviceAssetToExcel : MonoBehaviour
     private ExcelRackRoomInfo _rackRoomInfo;
     public List<string> jsonChunk;
     
-    [Button("BuildExcelRoomData")] 
-    private void BuildExcelRoomData()
+    private void BuildExcelRoomData()   
     {
         _rackRoomInfo = new ExcelRackRoomInfo();
         _rackRoomInfo["Room-A1"] = new List<ExcelRackRoomInfo.RackInfo>(){new ()};
@@ -61,5 +61,13 @@ public class Demo_DeviceAssetToExcel : MonoBehaviour
             new (){ RU =2, info ="empty" },
             new (){ RU =1, info ="empty" }
         };
+    }
+
+
+    [Button("ToWebAPI_ExcelPrepare")]
+    private void ToWebAPI_ExcelPrepare()
+    {
+        BuildExcelRoomData();
+        WebApiExcelGenerator.ExcelPrepare(_rackRoomInfo);
     }
 }

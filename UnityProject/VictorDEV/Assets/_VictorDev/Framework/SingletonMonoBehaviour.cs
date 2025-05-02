@@ -2,10 +2,8 @@ using UnityEngine;
 
 namespace VictorDev.Common
 {
-    /// <summary>
     /// 單例模式，可static呼叫，可掛載於GameObject上
     /// <para>偵測Instance是否存在並自動新建於場景上</para>
-    /// </summary>
     public class SingletonMonoBehaviour<T> : MonoBehaviour where T : Component, new()
     {
         private static T instance { get; set; }
@@ -18,7 +16,8 @@ namespace VictorDev.Common
             {
                 if (instance == null)
                 {
-                    instance = FindObjectOfType<T>();
+                    instance = FindFirstObjectByType<T>();
+
                     if (instance == null)
                     {
                         GameObject obj = new GameObject();

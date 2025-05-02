@@ -1,36 +1,80 @@
 using System.Collections.Generic;
 using NaughtyAttributes;
+using Newtonsoft.Json;
 using UnityEngine;
 using VictorDev.Common;
-using Debug = UnityEngine.Debug;
+using Debug = VictorDev.Common.Debug;
 
 namespace VictorDev.Net.WebAPI.TCIT
 {
+    /// 後端第二代 - 動態生成機房設備Excel報表
     public class WebApiExcelGenerator : SingletonMonoBehaviour<WebApiExcelGenerator>
     {
-       
-        public static void ExcelPerpare(string deviceJsonString, int? chunkSize = null)
+        private List<string> jsonChunkList;
+        private int jsonChunkCounter = 0;
+
+
+        [Button("ExcelPrepare")]
+        private void ExcelPrepare() => ExcelPrepare("AAA");
+        /// 將JSON資料進行分段批次，傳給Prepare做緩存
+        public static void ExcelPrepare(object data) => ExcelPrepare(JsonConvert.SerializeObject(data));
+        
+        /// 將JSON字串進行分段批次，傳給Prepare做緩存
+        public static void ExcelPrepare(string deviceJsonString, int? chunkSize = null)
         {
             Instance.jsonChunkSize = chunkSize ?? Instance.jsonChunkSize;
-            
+            Instance.jsonChunkList = StringHelper.SplitString(deviceJsonString, Instance.jsonChunkSize);
+            Instance.jsonChunkCounter = 0;
+            Debug.Log($"JonChunkList Count: {Instance.jsonChunkList.Count} / Each ChunkSize: {Instance.jsonChunkSize}",
+                Instance, EmojiEnum.DataBox);
+            Instance.SendExcelPrepareDataRecursive();
         }
-        [Button("ExcelStart")]
-        public  void ExcelStart()
+        /// 遞回呼叫Prepare
+        private void SendExcelPrepareDataRecursive()
         {
-            WebAPI_Caller.CallWebAPI(requestExcelExportStart, onSuccessHandler);
-            Debug.Log("ExcelStart");
+            PrepareBodyRawData prepareBodyRawData = new PrepareBodyRawData()
+            {
+                batchString = jsonChunkList[jsonChunkCounter],
+                index = jsonChunkCounter,
+                isFinalBatch = (jsonChunkCounter == jsonChunkList.Count - 1),
+            };
+            Debug.Log(prepareBodyRawData, this, EmojiEnum.Robot);
+            requestExcelExportPrepare.SetRawJsonData(JsonConvert.SerializeObject(prepareBodyRawData, Formatting.Indented));
+            WebAPI_Caller.CallWebAPI(requestExcelExportPrepare, OnPrepareSuccessHandler);
+
+            void OnPrepareSuccessHandler(long responseCode, Dictionary<string, string> arg2)
+            {
+                Debug.Log($"onPrepareSuccessHandler[{responseCode}]", this, EmojiEnum.Done);
+                if (++jsonChunkCounter < jsonChunkList.Count) SendExcelPrepareDataRecursive();
+                else ExcelStart();
+            }
         }
 
+        /// 開始生成Excel報表
+        [Button("ExcelStart")]
+        private void ExcelStart()
+        {
+            Debug.Log("ExcelStart", this, EmojiEnum.Robot);
+            WebAPI_Caller.CallWebAPI(requestExcelExportStart, OnStartSuccessHandler);
+
+            void OnStartSuccessHandler(long responseCode, Dictionary<string, string> arg2)
+            {
+                Debug.Log($"OnStartSuccessHandler[{responseCode}]", this, EmojiEnum.Done);
+                ExcelExport();
+            }
+        }
+
+        /// 下載Excel報表
         [Button("ExcelExport")]
         public void ExcelExport()
         {
-            WebAPI_Caller.CallWebAPI(requestExcelExport, onSuccessHandler);
-            Debug.Log("ExcelExport");
-        }
+            Debug.Log("ExcelExport", this, EmojiEnum.Robot);
+            WebAPI_Caller.CallWebAPI(requestExcelExport, OnExportSuccessHandler);
 
-        private void onSuccessHandler(long arg1, Dictionary<string, string> arg2)
-        {
-            Debug.Log("dfasdf");
+            void OnExportSuccessHandler(long responseCode, Dictionary<string, string> arg2)
+            {
+                Debug.Log($"OnExportSuccessHandler[{responseCode}]", this, EmojiEnum.Done);
+            }
         }
 
         #region Variables
@@ -48,5 +92,19 @@ namespace VictorDev.Net.WebAPI.TCIT
         private WebAPI_Request requestExcelExport;
 
         #endregion
+
+        /// 呼叫Prepare的Body Raw格式
+        [SerializeField]
+        public struct PrepareBodyRawData
+        {
+            /// 批次JSON字串
+            public string batchString;
+            /// 第幾批(從0起算)
+            public int index;
+            /// 最後一批要為true
+            public bool isFinalBatch;
+            public override string ToString()
+                => $"SendJsonChunkToPrepare[{index}]:\n{batchString}\nisFinalBatch: {isFinalBatch}";
+        }
     }
 }

@@ -309,7 +309,7 @@ namespace VictorDev.Net.WebAPI
             else
             {
                 //成功，回傳Dictionary<欄位名, 值>
-                onSuccess?.Invoke(request.responseCode, JsonHelper.ParseJson(downloadHandler.text));
+                onSuccess?.Invoke(request.responseCode, string.IsNullOrEmpty(downloadHandler.text)? null: JsonHelper.ParseJson(downloadHandler.text));
             }
         }
         /// <summary>
