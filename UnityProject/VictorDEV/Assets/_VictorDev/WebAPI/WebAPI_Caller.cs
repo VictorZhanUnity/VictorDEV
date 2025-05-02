@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-using Unity.VisualScripting;
 using UnityEngine.Networking;
 using VictorDev.Async.CoroutineUtils;
 using VictorDev.Parser;
@@ -214,6 +213,13 @@ namespace VictorDev.Net.WebAPI
                     break;
                 case enumRequestMethod.POST:
                     using (UnityWebRequest request = new UnityWebRequest(requestPackage.url, "POST"))
+
+                    /*   WWWForm form = new WWWForm();
+                       form.AddField("BuildingCode", "TPE");
+                       form.AddField("DeviceCode", "HWACOM/TPE/IDC/FL1/DCR/Schneider-ER8222搭電源/Rack1");*/
+
+                    //   using (UnityWebRequest request = UnityWebRequest.Post(requestPackage.url, requestPackage.formData))
+                    //using (UnityWebRequest request = UnityWebRequest.Post(requestPackage.url, form))
                     {
                         // 設定Request相關資訊
                         DownloadHandler downloadHandler = RequestSetting(requestPackage, request);
@@ -288,7 +294,7 @@ namespace VictorDev.Net.WebAPI
             downloadHandler = new DownloadHandlerBuffer();
             request.downloadHandler = downloadHandler;
             return downloadHandler;
-        } 
+        }
         /// <summary>
         /// 處理結果資訊 (回傳：單一JSON值)
         /// </summary>
@@ -299,12 +305,11 @@ namespace VictorDev.Net.WebAPI
             {
                 //失敗
                 onFailed?.Invoke(request.responseCode, request.error);
-                if(onFailed == null) Debug.Log($"onFailed[{request.responseCode}]: {request.error}\n{downloadHandler.text}");
             }
             else
             {
                 //成功，回傳Dictionary<欄位名, 值>
-                onSuccess?.Invoke(request.responseCode, string.IsNullOrEmpty(downloadHandler.text)? null: JsonHelper.ParseJson(downloadHandler.text));
+                onSuccess?.Invoke(request.responseCode, JsonHelper.ParseJson(downloadHandler.text));
             }
         }
         /// <summary>

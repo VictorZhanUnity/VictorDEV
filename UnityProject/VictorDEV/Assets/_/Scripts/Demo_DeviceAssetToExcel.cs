@@ -2,13 +2,14 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using Newtonsoft.Json;
 using UnityEngine;
-using VictorDev.Net.WebAPI.TCIT;
 using Debug = VictorDev.Common.Debug;
 
 public class Demo_DeviceAssetToExcel : MonoBehaviour
 {
     private ExcelRackRoomInfo _rackRoomInfo;
+    public List<string> jsonChunk;
     
+    [Button("BuildExcelRoomData")] 
     private void BuildExcelRoomData()
     {
         _rackRoomInfo = new ExcelRackRoomInfo();
@@ -60,14 +61,5 @@ public class Demo_DeviceAssetToExcel : MonoBehaviour
             new (){ RU =2, info ="empty" },
             new (){ RU =1, info ="empty" }
         };
-    }
-
-    [Button("ExcelExportPrepare")] 
-    private void ExcelExportPrepare()
-    {
-        BuildExcelRoomData();
-        string jsonString = JsonConvert.SerializeObject(_rackRoomInfo, Formatting.Indented);
-        WebApiExcelGenerator.ExcelPerpare(jsonString);
-
     }
 }
